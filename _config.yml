@@ -3,8 +3,9 @@ title: Mrkprdo.Github.Io
 timezone: America/New_York
 collections:
   posts:
-    title: Posts
+    title: Hello World
     output: true
+    Field name: Testing
   uploads:
     title: Uploads
     output: true
