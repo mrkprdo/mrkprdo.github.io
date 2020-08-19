@@ -1,11 +1,66 @@
----
-title: Mrkprdo.Github.Io
-timezone: America/New_York
-collections:
-  posts:
-    title: Hello World
-    output: true
-    Field name: Testing
-  uploads:
-    title: Uploads
-    output: true
+# Website settings
+# url: "https://www.ybrikman.com"
+
+# Internal nav
+nav:
+  main:
+    thoughts: "/thoughts"
+    projects: "/projects"
+    resume: "/resume"
+  writing:
+    all: "/thoughts"
+    popular: "/thoughts/popular"
+    tags: "/thoughts/tags"
+    rss: "/feed.xml"
+
+# Bio settings
+name: "Mark Prado"
+description: "Personal home page of Mark Prado, Technology New Grad at Rogers, software developer mainly focus on automation and embedded systems. Sometimes does a bit of web development. And an electronics hobbyist."
+thumbnail_path: "img/me.png"
+website_repo_url: "https://github.com/mrkprdo/mrkprdo.github.io"
+
+# URLs
+contact_urls:
+  twitter:
+    url: "https://twitter.com/brikis98"
+    label: "Twitter"
+    icon: "twitter-square"
+    username: "@mrkprdo"
+  linkedin:
+    url: "https://www.linkedin.com/in/markanthonyprado/"
+    label: "LinkedIn"
+    icon: "linkedin-square"
+  facebook:
+    url: "https://www.facebook.com/odarpkram.markprado"
+    label: "Facebook"
+    icon: "facebook-square"
+  slideshare:
+    url: "https://www.slideshare.net/brikis98"
+    label: "SlideShare"
+    icon: "slideshare"
+  github:
+    url: "https://github.com/mrkprdo/"
+    label: "GitHub"
+    icon: "github-square"
+  email:
+    url: "mailto:pl@ceholder.com"
+    label: "Email"
+    value: "pl@ceholder.com"
+    icon: "envelope-square"
+
+# Jekyll build settings
+paginate: 10
+paginate_path: "/thoughts/page:num"
+permalink: "/thoughts/:year/:month/:day/:title/"
+sass:
+  sass_dir: "/assets/css"
+  style: :compressed
+highlighter: rouge
+timezone: 'Canada/Toronto'
+repository: mrkprdo/mrkprado.github.io
+
+# Plugins (GitHub Pages only support a few)
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-paginate
