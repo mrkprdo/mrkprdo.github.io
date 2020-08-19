@@ -15,7 +15,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     animation-name: example;
-    animation-duration: 2s;
+    animation-duration: 5s;
 }
 
 .blur {
