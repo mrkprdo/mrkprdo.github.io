@@ -67,7 +67,7 @@
                 var short_contents = res_json['content'].substring(0, 500)
                 var link = ' <a class="badge bg-success" href="/view.html?post='+res_json['id']+'"/>Read more...</a>'
                 $('#contents').append(`
-                <div class="`+res_json['id']+` border rounded pt-2 mt-3">
+                <div class="`+res_json['id']+` border border-secondary rounded p-2 mt-3">
                     <div class="row">
                         <div class="col-md-12">
                             <h1>`+res_json['title']+`</h1>
