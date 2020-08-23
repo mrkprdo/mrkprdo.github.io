@@ -51,12 +51,6 @@
     </div>
     <script>
         var posts = []
-        function ReadMore(id,contents){
-            contents = contents.substring(0, 500)
-            var link = '<a href="/view.html?post='+id+'"/>&nbsp;Read more...</a>'
-
-            return contents+link
-        }
         try {
             for (var i=0;i<999;i++){
                 var res = $.ajax({
@@ -96,6 +90,12 @@
                 posts.push(res_json)
             }
         } catch(err) {
+        }
+
+        function ReadMore(id,contents){
+            var short_contents = contents.substring(0, 500)
+            var link = ' <a href="/view.html?post='+id+'"/>&nbsp;Read more...</a>'
+            return short_contents+link
         }
     </script>
 </body>
