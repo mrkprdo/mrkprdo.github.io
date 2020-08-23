@@ -46,9 +46,17 @@
             </div>
         </nav>
     </header>
-    <div class="container" id="contents"></div>
+    <div class="container text-light shadow-lg" style="margin-top:10vh;" id="contents">
+        
+    </div>
     <script>
         var posts = []
+        function ReadMore(id,contents){
+            contents = contents.substring(0, 500)
+            var link = '<a href="/view.html?post='+id+'"/>&nbsp;Read more...</a>'
+
+            return contents+link
+        }
         try {
             for (var i=0;i<999;i++){
                 var res = $.ajax({
@@ -63,23 +71,26 @@
 
                 var res_json = JSON.parse(res)
                 $('#contents').append(`
-                    <div class="`+i+`">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>`+res_json['title']+`</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>`+res_json['date']+`</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>`+res_json['content']+`</h4>
-                            </div>
+                <div class="0">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>`+res_json['title']+`</h1>
                         </div>
                     </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>`+res_json['date']+`</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> 
+                                `+ReadMore(res_json['id'],res_json['contents'])+`
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 `)
                 console.log(res_json)
                 posts.push(res_json)
