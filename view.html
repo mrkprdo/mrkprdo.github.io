@@ -47,32 +47,6 @@
         </nav>
     </header>
     <div class="container text-light shadow-lg" style="margin-top:10vh;" id="contents">
-        <div class="0">
-            <div class="row">
-                <div class="col-md-12">
-                   <img src="https://picsum.photos/1285/300" width="100%;">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>This is my first post</h1>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>August 20, 2020</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p> 
-                        This is my first post, I was just trying to create a Github Pages website that will host my personal site. The challenge lies down to the process of creating content and deploying it in a way that github page will pick it up and display my post. The famous solution is to use Jekyll/Jekyll Now, a Ruby framework which I dont have any experience at all. 
-                        <br><br>Well, the issue is not that i find it hard use to but instead use it on top of my customized template. I decided not to spend much time on it so i just settled on the way i am posting right now. Bascically, saving my blog contents into a JSON format and let ajax parse it in the client side. This is non-trivial way, and I found it really easy. If you guys want to know more how i did it, I will show you on my next post. Have a great day!</p>
-                </div>
-            </div>
-        </div>
     </div>
     <script>
         var posts = []
@@ -90,23 +64,30 @@
 
                 var res_json = JSON.parse(res)
                 $('#contents').append(`
-                    <div class="`+i+`">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>`+res_json['title']+`</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>`+res_json['date']+`</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>`+res_json['content']+`</h4>
-                            </div>
+                <div class="`+i+`">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <img src="`+res_json['image']+`" width="100%;">
                         </div>
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>`+res_json['title']+`</h1>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>`+res_json['date']+`</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>`+res_json['contents']+`</p>
+                        </div>
+                    </div>
+                </div>
                 `)
                 console.log(res_json)
                 posts.push(res_json)
