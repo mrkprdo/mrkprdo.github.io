@@ -65,7 +65,7 @@
 
                 var res_json = JSON.parse(res)
                 var short_contents = res_json['content'].substring(0, 500)
-                var link = ' <a href="/view.html?post='+res_json['id']+'"/>Read more...</a>'
+                var link = ' <a class="badge bg-success" href="/view.html?post='+res_json['id']+'"/>Read more...</a>'
                 $('#contents').append(`
                 <div class="`+res_json['id']+`">
                     <div class="row">
@@ -76,7 +76,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>`+res_json['date']+`</p>
+                            <p class="font-italic">`+res_json['date']+`</p>
                         </div>
                     </div>
                     <div class="row">
