@@ -142,6 +142,8 @@
     <script>
         var posts = []
         try {
+            var set_active = true;
+            var active = 'active';
             for (var i=0;i<3;i++){
                 var res = $.ajax({
                         type: 'GET',
@@ -156,8 +158,13 @@
                 var res_json = JSON.parse(res)
                 var short_contents = res_json['content'].substring(0, 500)
                 var link = '/view.html?post='+res_json['id']
+                if (set_active){
+                    set_active = false;
+                } else {
+                    active = '';
+                }
                 $('.carousel-inner').prepend(`
-                <div class="carousel-item">
+                <div class="carousel-item `+active+`">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 pl-3">
