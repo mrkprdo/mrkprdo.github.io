@@ -51,21 +51,23 @@
     </main>
     <script>
         var posts = []
-        for (var i=0;i<999;i++){
-            var res = $.ajax({
-                    type: 'GET',
-                    url: "/posts/"+i+".json",
-                    global: false, 
-                    async:false,
-                    complete: function(response){
-                        return response;
-                    }
-                }).responseText;
-            // console.log(res)
-            var res_json = JSON.parse(res)
-            posts.push(res_json)
+        try {
+            for (var i=0;i<999;i++){
+                var res = $.ajax({
+                        type: 'GET',
+                        url: "/posts/"+i+".json",
+                        global: false, 
+                        async:false,
+                        complete: function(response){
+                            return response;
+                        }
+                    }).responseText;
+                // console.log(res)
+                var res_json = JSON.parse(res)
+                posts.push(res_json)
+            }
+        } catch(err) {
         }
-
         for (var i=0;i<posts.length;i++){
             $('#contents').append(posts[i])
         }
