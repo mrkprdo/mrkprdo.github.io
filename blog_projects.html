@@ -64,14 +64,11 @@
                     }).responseText;
                 // console.log(res)
                 var res_json = JSON.parse(res)
+                $('#contents').append(res_json)
                 posts.push(res_json)
             }
         } catch(err) {
         }
-        for (var i=0;i<posts.length;i++){
-            $('#contents').append(posts[i])
-        }
-
     </script>
 </body>
 </html>
