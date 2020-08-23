@@ -49,12 +49,12 @@
     <div class="container text-light shadow-lg" style="margin-top:10vh;" id="contents">
     </div>
     <script>
-        var posts = []
-        try {
-            for (var i=0;i<999;i++){
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('post');
+        
                 var res = $.ajax({
                         type: 'GET',
-                        url: "/posts/"+i+".json",
+                        url: "/posts/"+postId+".json",
                         global: false, 
                         async:false,
                         complete: function(response){
@@ -91,9 +91,6 @@
                 `)
                 console.log(res_json)
                 posts.push(res_json)
-            }
-        } catch(err) {
-        }
     </script>
 </body>
 </html>
