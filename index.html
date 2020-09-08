@@ -147,7 +147,7 @@
                     }).responseText;
 
                 var res_json = JSON.parse(res)
-                var short_contents = res_json['content'].substring(0, 500)
+                var short_contents = res_json['content'].substring(0, 300)
                 var link = '/view.html?post='+res_json['id']
                 if (set_active){
                     set_active = false;
