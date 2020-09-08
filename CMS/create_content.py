@@ -99,7 +99,7 @@ class GUI:
         cms.write(title=self.title_input.get(),
                 date=self.date_input.get(),
                 tags=self.tag_input.get(),
-                content=self.content_input.get('1.0','end-1c')
+                content=str(self.content_input.get('1.0','end-1c')).replace('\n','<br/>')
                 )
         cms.save()
         self.root.destroy()
