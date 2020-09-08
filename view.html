@@ -105,20 +105,20 @@
         `)
         $('head').append(`
         <meta name="title" content="MRKPRDO - `+res_json['title']+`">
-        <meta name="description" content="`+res_json['content']+`">
+        <meta name="description" content="`+res_json['content'].substring(0, 100)+`... [Click to read more]">
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://mrkprdo.github.io/view.html?post=`+postId+`">
-        <meta property="og:title" content="MRKPRDO">
-        <meta property="og:description" content="`+res_json['content']+`">
+        <meta property="og:title" content="`+res_json['title']+`">
+        <meta property="og:description" content="`+res_json['content'].substring(0, 100)+`... [Click to read more]">
         <meta property="og:image" content="`+res_json['image']+`">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://mrkprdo.github.io/view.html?post=`+postId+`">
-        <meta property="twitter:title" content="MRKPRDO">
-        <meta property="twitter:description" content="`+res_json['content']+`">
+        <meta property="twitter:title" content="`+res_json['title']+`">
+        <meta property="twitter:description" content="`+res_json['content'].substring(0, 100)+`... [Click to read more]">
         <meta property="twitter:image" content="`+res_json['image']+`">
         `)
     </script>
