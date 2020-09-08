@@ -1,10 +1,9 @@
 {
     "id": 2,
-    "image": "",
+    "image": "https://picsum.photos/id/2/1285/300",
     "title": "My Github Page CMS GUI",
     "date": "September 08, 2020",
     "tags": "",
     "content": "After a while setting up my Github Pages as my personal website. I have made a Python GUI built from tkinter library, to generate my JSON file for my contents to be pushed on my repo. Having this tool will be made easier for me to format the JSON file that will work on my site. Basically this python gui just takes input and generates file on my post folder. It will auto generate the id and save the filename accordingly.<br/><br/>You can check the script <a href=\"/CMS/create_content.py\" target=\"_blank\">here</a>. This is tested on Windows. I am sure this will work on other OS that has Python with tkinter. Although, this didn't work on Windows Subsystems for Linux apparently due to missing graphics interface.<br/><br/><img src=\"/images/cms_gui.png\" height=\"400px\" width=\"400px\">",
-    "images": "https://picsum.photos/id/2/1285/300",
     "meta_image": "https://mrkprdo.github.io/images/2_300x300.jpg"
 }

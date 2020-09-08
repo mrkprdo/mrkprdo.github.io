@@ -51,7 +51,7 @@ class CMS:
         post_folder = os.path.join(os.getcwd(),'posts')
         posts = os.listdir(post_folder)
         self.post['id'] = len(posts)
-        self.post['images'] = 'https://picsum.photos/id/{}/1285/300'.format(self.post['id'])
+        self.post['image'] = 'https://picsum.photos/id/{}/1285/300'.format(self.post['id'])
 
         img_dl = ImageDownloader(post_id=self.post['id'],l=300,w=300,src='https://picsum.photos/id/{}/300/300'.format(self.post['id']))
         self.post['meta_image'] = img_dl.get_image_src()
