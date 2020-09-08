@@ -1,8 +1,8 @@
 {
     "id":1,
-    "image":"https://picsum.photos/1285/300",
-    "title":"I Think It Is Working Now!",
-    "date":"August 21, 2020",
-    "tags":"",
-    "content":"Oh yes! I think the concept that I was thinking, that building my own CMS into github pages without using any framework is feasible. All I need to do now is to get you guys some tutorial once I finish creating my entries in the carousel of my index page. My plan is to put the top recent three post that i added. I should be able to just pick the last 3 post and display it that way my placeholder is currently showing."
+    "image": "https://picsum.photos/1285/300",
+    "title": "I Think It Is Working Now!",
+    "date": "August 21, 2020",
+    "tags": "",
+    "content": "Oh yes! I think the concept that I was thinking, that building my own CMS into github pages without using any framework is feasible. All I need to do now is to get you guys some tutorial once I finish creating my entries in the carousel of my index page. My plan is to put the top recent three post that i added. I should be able to just pick the last 3 post and display it that way my placeholder is currently showing."
 }

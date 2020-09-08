@@ -1,8 +1,8 @@
 {
     "id":0,
-    "image":"https://picsum.photos/1285/300",
-    "title":"This is my first post",
-    "date":"August 20, 2020",
-    "tags":"",
-    "content":"This is my first post, I was just trying to create a Github Pages website that will host my personal site. The challenge lies down to the process of creating content and deploying it in a way that github page will pick it up and display my post. The famous solution is to use Jekyll/Jekyll Now, a Ruby framework which I dont have any experience at all. <br><br> Well, the issue is not that i find it hard use to but instead use it on top of my customized template. I decided not to spend much time on it so i just settled on the way i am posting right now. Bascically, saving my blog contents into a JSON format and let ajax parse it in the client side. This is non-trivial way, and I found it really easy. If you guys want to know more how i did it, I will show you on my next post. Have a great day!"
+    "image": "https://picsum.photos/1285/300",
+    "title": "This is my first post",
+    "date": "August 20, 2020",
+    "tags": "",
+    "content": "This is my first post, I was just trying to create a Github Pages website that will host my personal site. The challenge lies down to the process of creating content and deploying it in a way that github page will pick it up and display my post. The famous solution is to use Jekyll/Jekyll Now, a Ruby framework which I dont have any experience at all. <br><br> Well, the issue is not that i find it hard use to but instead use it on top of my customized template. I decided not to spend much time on it so i just settled on the way i am posting right now. Bascically, saving my blog contents into a JSON format and let ajax parse it in the client side. This is non-trivial way, and I found it really easy. If you guys want to know more how i did it, I will show you on my next post. Have a great day!"
 }
