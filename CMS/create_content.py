@@ -4,12 +4,30 @@ CLI Python App that will generate contents for my github page
 
 import os
 import json
+import requests
+import shutil
 from datetime import date
 import tkinter as tk
 from tkinter import ttk
 from tkinter import * 
 
 today = date.today()
+
+class ImageDownloader:
+    def __init__(self,post_id=None,l=None,w=None,src=None,ext='jpg'):
+        req = requests.get(src, stream = True)
+        filename = '{}_{}x{}.{}'.format(post_id,l,w,ext)
+        if req.status_code == 200:
+            req.raw.decode_content = True
+            images_folder = os.path.join(os.getcwd(),'images')
+            with open(os.path.join(images_folder,filename),'wb') as f:
+                shutil.copyfileobj(req.raw, f)
+        else:
+            raise Exception('Error in requesting image...')
+        self.img_src = 'https://mrkprdo.github.io/images/{}'.format(filename)
+    def get_image_src(self):
+        return self.img_src
+
 
 class CMS:
     def __init__(self):
@@ -20,6 +38,7 @@ class CMS:
             "date":"",
             "tags":"",
             "content":""
+            "meta_image"
         }
 
     def write(self,title=None,tags=None,date=None,content=None):
@@ -33,6 +52,10 @@ class CMS:
         posts = os.listdir(post_folder)
         self.post['id'] = len(posts)
         self.post['images'] = 'https://picsum.photos/id/{}/1285/300'.format(self.post['id'])
+
+        img_dl = ImageDownloader(post_id=self.post['id'],l=300,w=300,src='https://picsum.photos/id/{}/300/300'.format(self.post['id']))
+        self.post['meta_image'] = img_dl.get_image_src()
+
         with open(os.path.join(post_folder,'{}.json'.format(self.post['id'])),'w+') as new_post:
             json.dump(self.post,new_post,indent=4)
 
