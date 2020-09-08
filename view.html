@@ -86,9 +86,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>`+res_json['title']+`</h1>
-                    <br>
-                    <div id="fb-root"></div>
-                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="gMHLdnqZ"></script>
                 </div>
             </div>
             <hr>
@@ -107,6 +104,8 @@
         console.log(res_json)
         posts.push(res_json)
     </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="gMHLdnqZ"></script>
     <div class="fb-share-button" data-href="https://mrkprdo.github.io/view.html?post=2" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrkprdo.github.io%2Fview.html%3Fpost%3D2&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 </body>
 </html>
