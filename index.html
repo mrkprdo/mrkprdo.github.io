@@ -135,6 +135,7 @@
         try {
             var set_active = true;
             var active = 'active';
+            var order = ['first','second','third']
             for (var i=0;i<3;i++){
                 var res = $.ajax({
                         type: 'GET',
@@ -159,7 +160,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 pl-3">
-                            <img class="first-slide" src="https://picsum.photos/300" alt="First slide">
+                            <img class="`+order[i]+`-slide" src="https://picsum.photos/id/`+i+`/300" alt="First slide">
                         </div>
                         <div class="col-md-8">
                             <div class="text-light text-left">

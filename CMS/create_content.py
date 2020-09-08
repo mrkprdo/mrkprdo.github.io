@@ -15,7 +15,7 @@ class CMS:
     def __init__(self):
         self.post = {
             "id":"",
-            "image":"https://picsum.photos/1285/300",
+            "image":"",
             "title":"",
             "date":"",
             "tags":"",
@@ -31,8 +31,9 @@ class CMS:
     def save(self):
         post_folder = os.path.join(os.getcwd(),'posts')
         posts = os.listdir(post_folder)
-        with open(os.path.join(post_folder,'{}.json'.format(len(posts))),'w+') as new_post:
-            self.post['id'] = len(posts)
+        self.post['id'] = len(posts)
+        with open(os.path.join(post_folder,'{}.json'.format(self.post['id'])),'w+') as new_post:
+            self.post['images'] = 'https://picsum.photos/id/{}/1285/300'.format(self.post['id'])
             json.dump(self.post,new_post,indent=4)
 
 class GUI:
