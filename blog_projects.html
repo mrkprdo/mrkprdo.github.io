@@ -76,7 +76,7 @@
                     }).responseText;
 
                 var res_json = JSON.parse(res)
-                var short_contents = res_json['content'].substring(0, 500)
+                var short_contents = res_json['content'].substring(0, 300)
                 var link = ' <a class="badge bg-success" href="/view.html?post='+res_json['id']+'"/>Read more...</a>'
                 $('#contents').prepend(`
                 <div class="`+res_json['id']+` border border-secondary rounded p-2 mt-3">
