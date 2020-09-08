@@ -32,8 +32,8 @@ class CMS:
         post_folder = os.path.join(os.getcwd(),'posts')
         posts = os.listdir(post_folder)
         self.post['id'] = len(posts)
+        self.post['images'] = 'https://picsum.photos/id/{}/1285/300'.format(self.post['id'])
         with open(os.path.join(post_folder,'{}.json'.format(self.post['id'])),'w+') as new_post:
-            self.post['images'] = 'https://picsum.photos/id/{}/1285/300'.format(self.post['id'])
             json.dump(self.post,new_post,indent=4)
 
 class GUI:
