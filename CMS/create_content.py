@@ -56,6 +56,7 @@ class MetaTagGen:
     <meta property="twitter:title" content="{post_dict['title']}">
     <meta property="twitter:description" content="{post_dict['content'][0:104]}-[Click to read more]">
     <meta property="twitter:image" content="{post_dict['meta_image']}">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     </head>
     <body>
         <script>
