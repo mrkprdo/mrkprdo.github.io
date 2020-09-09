@@ -41,7 +41,7 @@ class MetaTagGen:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="MRKPRDO - {post_dict['title']}">
-    <meta name="description" content="{post_dict['content']}... [Click to read more]">
+    <meta name="description" content="{post_dict['content'][0:50]}... [Click to read more]">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
