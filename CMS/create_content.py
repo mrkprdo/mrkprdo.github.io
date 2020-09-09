@@ -59,7 +59,9 @@ class MetaTagGen:
     </head>
     <body>
         <script>
+        $( document ).ready(function() {{
             window.location.href = "https://mrkprdo.github.io/view.html?post={post_dict['id']}";
+        }});
         </script>
     </body>
 </html>
