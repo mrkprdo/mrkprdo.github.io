@@ -28,6 +28,44 @@ class ImageDownloader:
     def get_image_src(self):
         return self.img_src
 
+class MetaTagGen:
+    def __init__(self,post_dict=None):
+        metapages = os.path.join(os.getcwd(),'metapages')
+        meta_filename = 'shared_post_{}.html'.format(post_dict['id'])
+        html_contents = f"""
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- Primary Meta Tags -->
+    <title>MRKPRDO </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="MRKPRDO - {post_dict['title']}">
+    <meta name="description" content="{post_dict['content']}... [Click to read more]">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrkprdo.github.io/view.html?post={post_dict['id']}">
+    <meta property="og:title" content="{post_dict['title']}">
+    <meta property="og:description" content="{post_dict['content'][0:50]}... [Click to read more]">
+    <meta property="og:image" content="{post_dict['meta_image']}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mrkprdo.github.io/view.html?post=`+postId+`">
+    <meta property="twitter:title" content="{post_dict['title']}">
+    <meta property="twitter:description" content="{post_dict['content'][0:104]}-[Click to read more]">
+    <meta property="twitter:image" content="{post_dict['meta_image']}">
+    </head>
+    <body>
+        <script>
+            window.location.href = "https://mrkprdo.github.io/view.html?post={post_dict['id']}";
+        </script>
+    </body>
+</html>
+        """
+        with open(os.path.join(metapages,meta_filename),'w+') as f:
+            f.write(html_contents)
 
 class CMS:
     def __init__(self):
@@ -58,6 +96,9 @@ class CMS:
 
         with open(os.path.join(post_folder,'{}.json'.format(self.post['id'])),'w+') as new_post:
             json.dump(self.post,new_post,indent=4)
+
+        metapages = MetaTagGen(self.post)
+
 
 class GUI:
     def __init__(self):
